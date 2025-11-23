@@ -1,0 +1,87 @@
+/* Azure-inspired classification colors */
+.bg-internal {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-color: #2196f3;
+    color: #1565c0;
+}
+
+.bg-confidential {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border-color: #ff9800;
+    color: #ef6c00;
+}
+
+.bg-highly-confidential {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    border-color: #f44336;
+    color: #c62828;
+}
+
+.bg-restricted {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    border-color: #9c27b0;
+    color: #7b1fa2;
+}
+
+.classification-badge {
+    cursor: help;
+    user-select: none;
+}
+
+.classification-banner {
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid;
+}
+
+/* Hover effects */
+.classification-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Pulse animation for important classifications */
+.bg-highly-confidential, .bg-restricted {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+/* Keep your existing styles and add these enhancements */
+
+.classification-badge {
+    cursor: help;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.classification-badge:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Enhanced pulse animation */
+.bg-highly-confidential, .bg-restricted {
+    animation: enhancedPulse 3s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes enhancedPulse {
+    0% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.7);
+    }
+    50% { 
+        transform: scale(1.02);
+        box-shadow: 0 0 0 10px rgba(244, 67, 54, 0);
+    }
+    100% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(244, 67, 54, 0);
+    }
+}

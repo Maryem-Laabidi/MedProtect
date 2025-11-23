@@ -1,0 +1,357 @@
+.network-security-dashboard {
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: white;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.dashboard-header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.simulate-threat-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.simulate-threat-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.connection-status-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.status-badge {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.status-badge.internal {
+    background: #4CAF50;
+    color: white;
+}
+
+.status-badge.external {
+    background: #FF9800;
+    color: white;
+}
+
+.connection-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-item label {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.ip-address {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.risk-level {
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.risk-level.low {
+    background: #4CAF50;
+    color: white;
+}
+
+.risk-level.medium {
+    background: #FF9800;
+    color: white;
+}
+
+.risk-level.high {
+    background: #f44336;
+    color: white;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+}
+
+.metric-icon {
+    font-size: 2em;
+}
+
+.metric-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+}
+
+.metric-value {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.metric-progress {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 6px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    border-radius: 10px;
+}
+
+.networks-section, .access-attempts-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.networks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.network-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 4px solid #4CAF50;
+}
+
+.network-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.network-type {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.network-type.internal {
+    background: #4CAF50;
+    color: white;
+}
+
+.network-type.restricted {
+    background: #FF9800;
+    color: white;
+}
+
+.network-type.remote_access {
+    background: #2196F3;
+    color: white;
+}
+
+.attempts-list {
+    margin-top: 15px;
+}
+
+.attempt-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid;
+}
+
+.attempt-item.allowed {
+    border-left-color: #4CAF50;
+}
+
+.attempt-item.blocked {
+    border-left-color: #f44336;
+}
+
+.attempt-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr auto;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.attempt-status {
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.attempt-status.allowed {
+    background: #4CAF50;
+    color: white;
+}
+
+.attempt-status.blocked {
+    background: #f44336;
+    color: white;
+}
+
+.attempt-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+.risk-score {
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.risk-0 { background: #4CAF50; color: white; }
+.risk-1 { background: #8BC34A; color: white; }
+.risk-2 { background: #FFEB3B; color: black; }
+.risk-3 { background: #FF9800; color: white; }
+.risk-4 { background: #f44336; color: white; }
+
+.azure-status-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.azure-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4CAF50;
+    animation: pulse 2s infinite;
+}
+
+.azure-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.feature-icon {
+    font-size: 1.2em;
+}
+
+.feature-status {
+    margin-left: auto;
+    padding: 2px 8px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .connection-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .attempt-main {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}

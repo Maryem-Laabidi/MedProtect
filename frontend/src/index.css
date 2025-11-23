@@ -1,0 +1,129 @@
+/* frontend/src/index.css */
+:root {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #2d3748;
+  background: linear-gradient(135deg, #f8fdf8 0%, #e8f5e8 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fdf8 0%, #e8f5e8 50%, #f0f9f0 100%);
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Medical Color Palette Light */
+.medical-primary { color: #2E7D32; }
+.medical-secondary { color: #4CAF50; }
+.medical-accent { color: #66BB6A; }
+.medical-danger { color: #D32F2F; }
+.medical-warning { color: #FF8F00; }
+
+/* Scrollbar Styling Light */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4CAF50, #66BB6A);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #66BB6A, #4CAF50);
+}
+
+/* Selection Colors Light */
+::selection {
+  background: rgba(76, 175, 80, 0.2);
+  color: #2d3748;
+}
+
+::-moz-selection {
+  background: rgba(76, 175, 80, 0.2);
+  color: #2d3748;
+}
+
+/* Focus Styles Light */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
+}
+
+/* Medical Animations Light */
+@keyframes pulse-medical {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Utility Classes Light */
+.text-medical { color: #2E7D32; }
+.bg-medical { background-color: #4CAF50; }
+.border-medical { border-color: #4CAF50; }
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.medical-gradient {
+  background: linear-gradient(135deg, #2E7D32, #4CAF50, #66BB6A);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+}

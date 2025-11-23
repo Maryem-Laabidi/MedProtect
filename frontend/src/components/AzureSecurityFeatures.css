@@ -1,0 +1,364 @@
+/* ===== AZURE SECURITY FEATURES DASHBOARD ===== */
+
+/* Azure Security Features Grid */
+.azure-security-features {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.azure-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Azure Feature Cards - Enhanced with your gradient theme */
+.azure-feature-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.azure-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0078d4, #00bcf2);
+}
+
+.azure-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 120, 212, 0.15);
+  border-color: #0078d4;
+}
+
+/* Card Header */
+.azure-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+  position: relative;
+}
+
+.azure-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.azure-card-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #323130;
+  flex-grow: 1;
+  font-weight: 600;
+  background: linear-gradient(135deg, #0078d4, #00bcf2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.azure-status-badge {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 1px solid #15572420;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.azure-status-badge.active {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+}
+
+/* Card Content */
+.azure-card-content p {
+  color: #605e5c;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ===== CLASSIFICATION PREVIEW - Enhanced ===== */
+.classification-preview {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border: 1px solid #e1e5e9;
+}
+
+.classification-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.classification-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e1e5e9;
+  transition: all 0.2s ease;
+}
+
+.classification-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== NETWORK STATUS PREVIEW - Enhanced ===== */
+.network-status-preview {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 12px;
+  border: 2px solid #2196f3;
+}
+
+.network-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.network-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #2196f320;
+}
+
+.network-item:last-child {
+  border-bottom: none;
+}
+
+.network-item .label {
+  font-weight: 600;
+  color: #1565c0;
+  min-width: 100px;
+  font-size: 0.9rem;
+}
+
+.network-item .value {
+  color: #0d47a1;
+  font-weight: 500;
+}
+
+.value.internal {
+  color: #155724;
+  font-weight: 700;
+  background: #d4edda;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+.value.low {
+  color: #155724;
+  font-weight: 700;
+  background: #d4edda;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+/* ===== API SECURITY PREVIEW - Enhanced ===== */
+.api-security-preview {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-radius: 12px;
+  border: 2px solid #ff9800;
+}
+
+.api-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #ff980020;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ff9800;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #e65100;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.protection-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.protection-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #ff980020;
+  font-weight: 500;
+  color: #e65100;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #28a745;
+  box-shadow: 0 0 8px #28a745;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ===== AZURE METRICS - Enhanced ===== */
+.azure-metrics {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  border-top: 2px solid #f0f0f0;
+  padding-top: 1.5rem;
+}
+
+.metric {
+  text-align: center;
+  flex: 1;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 10px;
+  border: 1px solid #e1e5e9;
+  transition: all 0.2s ease;
+}
+
+.metric:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0078d4;
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: #605e5c;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .azure-features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .azure-metrics {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .api-stats {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .azure-feature-card {
+    padding: 1.25rem;
+  }
+  
+  .azure-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .azure-status-badge {
+    align-self: flex-start;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.azure-feature-card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.azure-feature-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.azure-feature-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* ===== GLOW EFFECTS ===== */
+.azure-feature-card:hover .azure-icon {
+  animation: iconGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes iconGlow {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(0, 120, 212, 0.3)); }
+  50% { filter: drop-shadow(0 0 15px rgba(0, 120, 212, 0.6)); }
+}
