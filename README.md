@@ -79,17 +79,19 @@ Patient: patient.ahmed / patient123
 
 ## 📁 Project Structure
 
+```
 MedProtect/
 ├── backend/
-│ ├── middleware/ # Security middleware
-│ ├── models/ # MongoDB schemas
-│ ├── routes/ # API endpoints
-│ └── services/ # Business logic
+│   ├── middleware/      # Security middleware
+│   ├── models/          # MongoDB schemas
+│   ├── routes/          # API endpoints
+│   └── services/        # Business logic
 ├── frontend/
-│ └── src/
-│ ├── components/ # React components
-│ └── pages/ # Application views
-└── documentation/ # Project docs
+│   └── src/
+│       ├── components/  # React components
+│       └── pages/       # Application views
+└── documentation/       # Project docs
+```
 
 
 ## 🔧 Key Security Components
