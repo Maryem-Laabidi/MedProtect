@@ -2,7 +2,7 @@ import MedicalRecord from '../models/MedicalRecord.js';
 
 class ClassificationService {
     static classifyMedicalRecord(recordType, content = '', patient = {}) {
-        // Map based on YOUR actual record types from your model enum
+        // Map based on Yactual record types from your model enum
         const sensitivityMap = {
             'lab_result': 'ROUTINE',
             'prescription': 'SENSITIVE',

@@ -1,4 +1,3 @@
-// frontend/src/pages/Login.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -41,7 +40,7 @@ export default function Login({ onLogin }) {
       }
     }
   } catch (error) {
-    // If login-check fails, try direct login (backward compatibility)
+    // If login-check fails
     try {
       await completeLogin(formData);
     } catch (loginError) {
@@ -52,7 +51,6 @@ export default function Login({ onLogin }) {
   }
 };
 
-// Add this helper function
 const completeLogin = async (loginData, mfaToken = null) => {
   const loginPayload = { ...loginData };
   if (mfaToken) {

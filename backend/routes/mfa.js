@@ -1,15 +1,15 @@
 import express from 'express';
-import { authenticateToken } from './auth.js'; // Use auth from your existing auth.js
+import { authenticateToken } from './auth.js'; 
 import MFAService from '../services/mfaService.js';
 import User from '../models/User.js';
 
 const router = express.Router();
 
-// @route   POST /api/mfa/setup
-// @desc    Start MFA setup process
+// route   POST /api/mfa/setup
+//   Start MFA setup process
 router.post('/setup', authenticateToken, async (req, res) => {
     try {
-        const user = await User.findById(req.user.userId); // Changed to req.user.userId
+        const user = await User.findById(req.user.userId); 
         
         if (user.mfaEnabled) {
             return res.status(400).json({ error: 'MFA already enabled' });
@@ -33,12 +33,12 @@ router.post('/setup', authenticateToken, async (req, res) => {
     }
 });
 
-// @route   POST /api/mfa/verify
-// @desc    Verify MFA token and enable MFA
+// route   POST /api/mfa/verify
+//     Verify MFA token and enable MFA
 router.post('/verify', authenticateToken, async (req, res) => {
     try {
         const { token } = req.body;
-        const user = await User.findById(req.user.userId); // Changed to req.user.userId
+        const user = await User.findById(req.user.userId); 
         
         if (!user.mfaTempSecret) {
             return res.status(400).json({ error: 'MFA setup not started' });
@@ -69,12 +69,12 @@ router.post('/verify', authenticateToken, async (req, res) => {
     }
 });
 
-// @route   POST /api/mfa/disable
-// @desc    Disable MFA
+//   POST /api/mfa/disable
+//     Disable MFA
 router.post('/disable', authenticateToken, async (req, res) => {
     try {
         const { token } = req.body;
-        const user = await User.findById(req.user.userId); // Changed to req.user.userId
+        const user = await User.findById(req.user.userId); 
         
         if (!user.mfaEnabled) {
             return res.status(400).json({ error: 'MFA not enabled' });
@@ -126,11 +126,11 @@ router.post('/verify-login', async (req, res) => {
     }
 });
 
-// @route   POST /api/mfa/backup-code
-// @desc    Verify backup code
+// route   POST /api/mfa/backup-code
+//  Verify backup code
 router.post('/backup-code', async (req, res) => {
     try {
-        const { username, backupCode } = req.body; // Changed from email to username
+        const { username, backupCode } = req.body; 
         const user = await User.findOne({ username });
         
         if (!user || !user.mfaEnabled) {

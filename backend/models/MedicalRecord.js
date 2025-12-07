@@ -117,21 +117,55 @@ medicalRecordSchema.methods.encryptSensitiveFields = function() {
   if (typeof this.description === 'string' && this.description.length > 0) {
     this.encryptedFields = this.encryptedFields || {};
     this.encryptedFields.description = {
-      data: `encrypted:${this.description}`, // Placeholder - will be replaced by KeyVaultService
+      data: `encrypted:${this.description}`, 
       iv: 'simulated_iv'
     };
-    this.description = undefined; // Remove plaintext after encryption
+    this.description = undefined; 
   }
   
   if (typeof this.content === 'string' && this.content.length > 0) {
     this.encryptedFields = this.encryptedFields || {};
     this.encryptedFields.content = {
-      data: `encrypted:${this.content}`, // Placeholder - will be replaced by KeyVaultService
+      data: `encrypted:${this.content}`, 
       iv: 'simulated_iv'
     };
-    this.content = undefined; // Remove plaintext after encryption
+    this.content = undefined; 
   }
 };
+
+/*
+medicalRecordSchema.methods.encryptSensitiveFields = async function() {
+  // Import KeyVaultService
+  const KeyVaultService = (await import('../services/keyVaultService.js')).default;
+  
+  if (typeof this.content === 'string' && this.content.length > 0) {
+    // Use REAL encryption from KeyVaultService
+    const encrypted = KeyVaultService.encryptField(this.content);
+    
+    this.encryptedFields = this.encryptedFields || {};
+    this.encryptedFields.content = {
+      data: encrypted.data,  // Real encrypted data
+      iv: encrypted.iv       // Real initialization vector
+    };
+    
+    // IMPORTANT: Completely remove plaintext
+    this.content = null; // Set to null instead of undefined
+  }
+  
+  // Same for description
+  if (typeof this.description === 'string' && this.description.length > 0) {
+    const encrypted = KeyVaultService.encryptField(this.description);
+    
+    this.encryptedFields = this.encryptedFields || {};
+    this.encryptedFields.description = {
+      data: encrypted.data,
+      iv: encrypted.iv
+    };
+    
+    this.description = null;
+  }
+};
+ */
 
 // Instance method to decrypt sensitive fields
 medicalRecordSchema.methods.decryptSensitiveFields = function() {

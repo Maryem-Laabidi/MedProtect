@@ -16,7 +16,7 @@ const accessRequestSchema = new mongoose.Schema({
     required: true
   },
   accessDuration: {
-    type: Number, // in hours
+    type: Number, 
     default: 24
   },
   status: {

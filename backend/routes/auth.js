@@ -7,7 +7,7 @@ import SecurityLogger from "../services/securityLogger.js";
 
 const router = express.Router();
 
-// Verify token middleware (MOVED TO TOP)
+// Verify token middleware 
 export const authenticateToken = (req, res, next) => {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
